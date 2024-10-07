@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { token } from '@atlaskit/tokens';
 
 export const StyledInstallationContainer = styled.div`
 	display: flex;
