@@ -20,6 +20,7 @@ import { ConnectLogos } from '../ConnectLogos/ConnectLogos'
 import { AnalyticsClient } from '../../../common/analytics/analytics-client'
 import {
   AnalyticsEventTypes,
+  AnalyticsOperationalEventsEnum,
   AnalyticsScreenEventsEnum,
   AnalyticsTrackEventsEnum,
   AnalyticsUiEventsEnum,
@@ -67,9 +68,20 @@ const CreateServer = () => {
     )
 
     if (!validateUrlOrIp(serverUrl)) {
-      setHasError(true);
-      setErrorMessage('Please enter a valid IP address or URL.');
-      return;
+      setHasError(true)
+      setErrorMessage('Please enter a valid IP address or URL.')
+
+      // Send analytics event for URL validation failure
+      await analyticsClient.sendAnalytics(
+        AnalyticsEventTypes.TrackEvent,
+        AnalyticsOperationalEventsEnum.JenkinsServerUrlValidationFailure,
+        {
+          source: AnalyticsScreenEventsEnum.CreateJenkinsServerScreenName,
+          action: 'submitted create server form with URL validation failure',
+          actionSubject: 'input-validation',
+        },
+      )
+      return
     }
 
     if (isFormValid(serverName, setHasError, setErrorMessage)) {

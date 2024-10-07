@@ -88,4 +88,8 @@ export enum AnalyticsTrackEventsEnum {
 	InProductHelpRequestFailureName = 'inProductHelpRequestFailure'
 }
 
+export enum AnalyticsOperationalEventsEnum {
+	JenkinsServerUrlValidationFailure = 'jenkinsServerUrlValidationFailure'
+}
+
 export enum AnalyticsOperationalEventsEnum {}
