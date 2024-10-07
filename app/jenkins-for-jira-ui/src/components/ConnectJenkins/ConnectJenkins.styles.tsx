@@ -19,7 +19,7 @@ export const StyledH1 = styled.h1`
 export const StyledInstallationContent = styled.div`
 	justify-content: flex-start;
 	width: 520px;
-	margin-top: 48px;
+	margin-top:${token('space.400', '48px')};
 `;
 
 export const StyledButtonContainer = styled.div`
@@ -28,14 +28,10 @@ export const StyledButtonContainer = styled.div`
 
 export const StyledButtonContainerInstallJenkins = styled(StyledButtonContainer)`
 	justify-content: flex-end;
-	margin-top: 48px;
+	margin-top: ${token('space.400', '48px')};
 `;
 
 export const StyledButtonContainerConnectedServers = styled(StyledButtonContainer)`
-	& button:first-of-type {
-		margin-right: 3px;
-	}
-
 	& button:last-child {
 		padding: 0;
 
