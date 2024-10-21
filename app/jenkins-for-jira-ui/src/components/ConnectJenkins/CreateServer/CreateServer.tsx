@@ -69,6 +69,7 @@ const CreateServer = () => {
     if (!validateUrlOrIp(serverUrl)) {
       setHasError(true);
       setErrorMessage('Please enter a valid IP address or URL.');
+      //TODO: Fire an analytics event here for invalid URL
       return;
     }
 
