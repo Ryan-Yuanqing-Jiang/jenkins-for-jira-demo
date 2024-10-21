@@ -20,6 +20,7 @@ export const StyledInstallationContent = styled.div`
 	justify-content: flex-start;
 	width: 520px;
 	margin-top: 48px;
+	//TODO: Remove hardcoded color and use token
 `;
 
 export const StyledButtonContainer = styled.div`
